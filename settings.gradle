@@ -1,0 +1,12 @@
+include ':app', ':TestAnalyticsPlugin-Android'
+project(':TestAnalyticsPlugin-Android').projectDir = new File('TestAnalyticsPlugin-Android')
+include ':firebaselibrary'
+project(':firebaselibrary').projectDir = new File('firebaselibrary')
+include ':swrveplugin-android'
+project(':swrveplugin-android').projectDir = new File('swrveplugin-android')
+
+/*
+include ':app'
+include ':swrveplugin-android'
+project(':swrveplugin-android').projectDir = new File('swrveplugin-android')
+*/

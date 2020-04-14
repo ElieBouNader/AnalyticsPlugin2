@@ -1,0 +1,59 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 28
+
+        consumerProguardFiles 'proguard-rules.pro'
+        multiDexEnabled true
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+    repositories {
+        jcenter { url = 'https://dl.bintray.com/swrve-inc/android' }
+        maven { url 'https://maven.google.com' }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation 'com.swrve.sdk.android:swrve:7.0.0'
+
+    // Applicaster SDK
+    def applicasterSDKPath = 'com.applicaster:applicaster-android-sdk:4.0.+'
+    // Check if an open SDK is defined - if not use the closed one.
+    def devSDK = findProject(':applicaster-android-sdk')
+    if (devSDK != null) {
+        implementation project(':applicaster-android-sdk')
+    } else {
+        implementation(applicasterSDKPath)
+    }
+}
