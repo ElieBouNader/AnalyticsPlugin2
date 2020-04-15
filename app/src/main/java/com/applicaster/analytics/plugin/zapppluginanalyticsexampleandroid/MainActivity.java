@@ -1,6 +1,5 @@
 package com.applicaster.analytics.plugin.zapppluginanalyticsexampleandroid;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,6 +7,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.applicaster.analytics.AnalyticsAgentUtil;
 import com.applicaster.analytics.plugin.R;

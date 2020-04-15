@@ -38,7 +38,11 @@ class SwrveAnalyticsAgent : BaseAnalyticsAgent() {
      */
     override fun initializeAnalyticsAgent(context: Context?) {
         super.initializeAnalyticsAgent(context)
-        SwrveSDK.start(context as? Activity)
+        /*try {
+            SwrveSDK.start(context as? Activity)
+        } catch (e: Exception) {
+            Log.wtf("SwrveDemo", "Could not initialize the Swrve SDK " + e.localizedMessage)
+        }*/
         //SwrveSDK.start(context as Activity, storage.id)
     }
 

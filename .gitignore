@@ -9,6 +9,4 @@
 /captures
 .externalNativeBuild
 .idea/
-gradle/
 firebaselibrary/src/test/java/com/thecodefather/firebaselibrary/ExampleUnitTest.kt
-gradlew
