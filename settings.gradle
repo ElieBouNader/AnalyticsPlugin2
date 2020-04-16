@@ -1,4 +1,4 @@
-include ':app', ':TestAnalyticsPlugin-Android'
+//include ':app', ':TestAnalyticsPlugin-Android'
 //project(':TestAnalyticsPlugin-Android').projectDir = new File('TestAnalyticsPlugin-Android')
 //include ':firebaselibrary'
 //project(':firebaselibrary').projectDir = new File('firebaselibrary')
